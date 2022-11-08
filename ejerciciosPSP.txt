@@ -1,0 +1,343 @@
+Ejercicio 1
+
+nombre = input("¿Como te llamas?")
+edad = input('¿Qué edad tienes?')
+dias = int(edad) * 365
+print (nombre, "has vivido", dias, "dias")
+
+Ejercicio 2
+
+base = input("introduzca el valor de la base")
+altura = input('introduzca el valor de la altura')
+if int(base) < 0 or int(altura) < 0:
+    print("Error, valores no válidos")
+
+if int(base) > 0 and int(altura) > 0:   
+    area = (int(base) * int(altura)) / 2
+    print (area)
+
+Ejercicio 3
+
+lista = [1, 2, 3]
+listaordenada = sorted(lista)
+print(listaordenada)
+
+if type(lista[0]) and type(lista[1]) and type(lista[2]) is int:
+     print("Contiene todo números: lista válida")
+else:
+     print("Contiene un letra: lista inválida")
+
+Ejercicio 4
+
+def ejecutarEjercicio1():
+        print("Este es el ejercicio 1")
+        nombre = input("¿Como te llamas?")
+        edad = input('¿Qué edad tienes?')
+        dias = int(edad) * 365
+        print (nombre, "has vivido", dias, "dias")
+        
+def ejecutarEjercicio2():
+    base = input("introduzca el valor de la base")
+    altura = input('introduzca el valor de la altura')
+    if int(base) < 0 or int(altura) < 0:
+        print("Error, valores no válidos")
+    if int(base) > 0 and int(altura) > 0:   
+        area = (int(base) * int(altura)) / 2
+        print (area)
+    
+def ejecutarEjercicio3():
+    lista = [2, 4, 3]
+    listaordenada = sorted(lista)
+    print(listaordenada)
+
+    if type(lista[0]) and type(lista[1]) and type(lista[2]) is int:
+        print("Contiene todo números: lista válida")
+    else:
+        print("Contiene un letra: lista inválida")
+
+
+ejercicio = input("¿Que ejercicio desea ejecutar?")
+if ejercicio == "1":
+    ejecutarEjercicio1()
+if ejercicio == "2":
+    ejecutarEjercicio2()
+if ejercicio == "3":
+    ejecutarEjercicio3()
+
+Ejercicio 5
+
+diccionario = {
+    "alturaencm":[],
+    "nombre":[],
+    "lugar":[],
+    "año":[]
+}
+
+print("Esto es un diccionario. Ahora se añadirán palabras a éste")
+palabraaltura = input("Palabra añadida para la clave alturaencm")
+palabranombre = input("Palabra añadida para la clave nombre")
+palabralugar = input("Palabra añadida para la clave lugar")
+palabraaño = input("Palabra añadida para la clave año")
+
+
+diccionario ["alturaencm"] = palabraaltura
+diccionario["nombre"] = palabranombre
+diccionario["lugar"] = palabralugar
+diccionario["año"] = palabraaño
+
+if len(palabranombre) > 20:
+    diccionario["nombre"] = []
+    print("Error, caracteres excesivos para un nombre")
+else:
+    diccionario["nombre"] = palabranombre
+    
+if int(palabraaltura) >= 0 and int(palabraaltura) < 300:
+    diccionario["alturaencm"] = palabraaltura
+else:
+    print("Error, altura imposible")
+    diccionario["alturaencm"] = []
+    
+if len(palabralugar) < 25:
+    diccionario["lugar"] = palabralugar
+else:
+    print("Error, caracteres excesivos o falta la mayúscula ")
+    diccionario["lugar"] = []
+ 
+if int(palabraaño) >= 1900 and int(palabraaño) < 2022:
+    diccionario["año"] = palabraaño
+else:
+    print("Error, año fuera del rango entre 1900 y 2022")
+    diccionario["año"] = []   
+
+print(diccionario)
+
+Ejercicio 6
+
+listadiccionario = []
+def generardiccionario():
+    
+    personaUno = {
+        "alturaencm": [175],
+        "nombre": ["Juanda"],
+        "lugar": ["Madrid"],
+        "año": [2003]
+    }
+    
+    listadiccionario.append([personaUno])
+    
+def imprimirdiccionario(generardiccionario):
+    generardiccionario()
+    generardiccionario()
+    generardiccionario()
+    print(listadiccionario)
+    
+def modificarunapersona(generardiccionario):
+    generardiccionario()
+    generardiccionario()
+    generardiccionario()
+    print(listadiccionario)
+    posicion = input("Persona a modificar: 1, 2 o 3")
+    if posicion == "1":
+        print("Primera persona")
+        print("Nombre: Juanda1")
+        for x in listadiccionario[0]:
+            print (x)
+            atributo = input("¿Que quieres cambiar? alturaencm, nombre, lugar o año?")
+            if atributo == "año":
+                nuevoaño = input("Nuevo valor")
+                x["año"] = nuevoaño
+                print(x)
+            if atributo == "nombre":
+                nuevonombre = input("Nuevo valor")
+                x["nombre"] = nuevonombre
+                print(x)
+            if atributo == "alturaencm":
+                nuevaaltura = input("Nuevo valor")
+                x["nombre"] = nuevaaltura
+                print(x)
+            if atributo == "lugar":
+                nuevolugar = input("Nuevo valor")
+                x["nombre"] = nuevolugar
+                print(x)
+    if posicion == "2":
+        print("Segunda persona")
+        print("Nombre: Juanda2")
+        for x in listadiccionario[1]:
+            print (x)
+            atributo = input("¿Que quieres cambiar? alturaencm, nombre, lugar o año?")
+            if atributo == "año":
+                nuevoaño = input("Nuevo valor")
+                x["año"] = nuevoaño
+                print(x)
+            if atributo == "nombre":
+                nuevonombre = input("Nuevo valor")
+                x["nombre"] = nuevonombre
+                print(x)
+            if atributo == "alturaencm":
+                nuevaaltura = input("Nuevo valor")
+                x["nombre"] = nuevaaltura
+                print(x)
+            if atributo == "lugar":
+                nuevolugar = input("Nuevo valor")
+                x["nombre"] = nuevolugar
+                print(x)
+    if posicion == "3":
+        print("Tercera persona")
+        print("Nombre: Juanda3")
+        for x in listadiccionario[2]:
+            print (x)
+            atributo = input("¿Que quieres cambiar? alturaencm, nombre, lugar o año?")
+            if atributo == "año":
+                nuevoaño = input("Nuevo valor")
+                x["año"] = nuevoaño
+                print(x)
+            if atributo == "nombre":
+                nuevonombre = input("Nuevo valor")
+                x["nombre"] = nuevonombre
+                print(x)
+            if atributo == "alturaencm":
+                nuevaaltura = input("Nuevo valor")
+                x["nombre"] = nuevaaltura
+                print(x)
+            if atributo == "lugar":
+                nuevolugar = input("Nuevo valor")
+                x["nombre"] = nuevolugar
+                print(x)
+                
+def modificardiccionario(generardiccionario):
+    generardiccionario()
+    generardiccionario()
+    generardiccionario()
+    print(listadiccionario)
+    for x in listadiccionario[0]:
+            x["alturaencm"] = 190
+            x["nombre"] = "Rafa"
+            x["lugar"] = "Parla"
+            x["año"] = 1999
+            print(x)
+    for x in listadiccionario[1]:
+            x["alturaencm"] = 173
+            x["nombre"] = "Juan"
+            x["lugar"] = "Pedrezuela"
+            x["año"] = 2003
+            print(x)
+    for x in listadiccionario[2]:
+            x["alturaencm"] = 176
+            x["nombre"] = "Alberto"
+            x["lugar"] = "Sanse"
+            x["año"] = 2003
+            print(x)
+    print("Diccionario actualizado")
+        
+funcion = input("Funcion a ejecutar: 1, 2, 3 o 4")
+if funcion == "1":
+   generardiccionario()
+if funcion == "2":
+   imprimirdiccionario(generardiccionario)
+if funcion == "4":
+   modificarunapersona(generardiccionario)
+if funcion == "3":
+   modificardiccionario(generardiccionario)
+
+Ejercicio 7
+
+tupla = ("Ios", "Ilustrator", "Inglés")
+print(tupla)
+
+def modificartupla():
+    
+    x = tupla
+    y = list(x)
+    y[0] = "BBD"
+    x = tuple(y)
+    y[1] = "PSP"
+    x = tuple(y)
+    y[2] = "Empresa"
+    x = tuple(y)
+    print(x)
+modificartupla()
+
+Ejercicio 8
+
+asignaturas = ["BBD","PSP","IOS","Inglés","Gestión","Diseño", "Empresa"]
+
+for x in asignaturas:
+  print(x)
+
+Ejercicio 9
+
+instrumentos = {"piano", "flauta", "tambor", "triángulo"}
+print(instrumentos)
+
+def modificarinstrumentos1():
+    x = instrumentos
+    y = list(x)
+    y[0] = "trombón"
+    x = tuple(y)
+    y[1] = "xilófono"
+    x = tuple(y)
+    y[2] = "oboe"
+    x = tuple(y)
+    y[3] = "ceremín"
+    x = tuple(y)
+    print(x)
+    
+def modificarinstrumentos2():
+    x = instrumentos
+    y = list(x)
+    y[0] = "violín"
+    x = tuple(y)
+    y[1] = "contrabajo"
+    x = tuple(y)
+    y[2] = "viola"
+    x = tuple(y)
+    y[3] = "violonchelo"
+    x = tuple(y)
+    print(x)
+modificarinstrumentos1()
+modificarinstrumentos2()
+
+Ejercicio 10
+
+email = input("Introduce un email")
+arroba = "@"
+punto = "."
+extension = "com"
+
+if arroba in email:
+    print("Cumple la condición del arroba")
+else:
+    print("NO Cumple la condición del arroba")
+    
+if len(email) > 20:
+    print("Error: email más largo de 20 caracteres")
+else:
+    print("Cumple la condición de numero de caracteres")
+    
+if punto in email:
+    print("Cumple la condición del punto")
+else:
+    print("NO Cumple la condición del punto")
+    
+if extension in email:
+    print("Cumple la condición de la extension com")
+else:
+    print("NO Cumple la condición de la extension com")
+    
+if arroba in email and len(email) > 20 and punto in email and extension in email:
+    print("Email perfectamente válido")
+else:
+    print("Email invalidado")
+
+Ejercicio 11
+
+numero = input("Pon un número")
+last_char = numero[-1]
+if last_char == "1" or last_char == "3" or last_char == "5" or  last_char == "7" or  last_char == "9":
+    print("El número es impar")
+else:
+    print("El número es par")
+
+Ejercicio 12
+
+
